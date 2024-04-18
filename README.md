@@ -7,8 +7,8 @@
 - 安卓端配置
 
 	```
-	network_security_config.xml 文件修改为服务器IP
-	NetworkService 修改服务器地址地址
+	network_security_config.xml 文件修改为服务器IP（如果自己本地运行后端项目）
+	NetworkService API_BASE_UTL 修改服务器地址
 	```
 	
 - 运行效果

@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         // 选择框
         platformArrayAdapter = new ArrayAdapter<>(getBaseContext(), R.layout.item_spinner, PLATFORM_DATA);
         spPlatform.setAdapter(platformArrayAdapter);
+        spPlatform.setSelection(1);
     }
 
     private void bindListen() {

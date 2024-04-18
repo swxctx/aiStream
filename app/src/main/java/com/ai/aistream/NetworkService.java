@@ -17,7 +17,7 @@ public class NetworkService {
     // 默认超时时间
     private static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
     // 服务器地址
-    private static final String API_BASE_UTL = "http://172.16.5.151:8080";
+    private static final String API_BASE_UTL = "https://api.developer.icu";
     private OkHttpClient client;
 
     public NetworkService() {
