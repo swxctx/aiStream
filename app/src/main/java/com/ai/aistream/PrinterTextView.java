@@ -1,9 +1,7 @@
 package com.ai.aistream;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -16,10 +14,6 @@ import java.util.TimerTask;
  * @Describe:
  */
 public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView {
-    /**
-     * TAG
-     */
-    private static final String TAG = "PrinterTextView";
     /**
      * 默认打字字符
      */
@@ -40,10 +34,6 @@ public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView
      * 间隔时间
      */
     private int intervalTime = DEFAULT_TIME_DELAY;
-    /**
-     * 间隔时间
-     */
-    private String intervalChar = DEFAULT_INTERVAL_CHAR;
     // 用于流式处理
     private Queue<Character> charQueue = new LinkedList<>();
 
@@ -131,6 +121,7 @@ public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView
 
     /**
      * 接收新文本并开始打字效果。
+     *
      * @param newText 新文本
      */
     public void receiveText(String newText) {
