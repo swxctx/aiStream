@@ -1,7 +1,9 @@
 package com.ai.aistream;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.TextView;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -14,10 +16,6 @@ import java.util.TimerTask;
  * @Describe:
  */
 public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView {
-    /**
-     * 默认打字字符
-     */
-    private final String DEFAULT_INTERVAL_CHAR = "_";
     /**
      * 默认打字间隔时间
      */
@@ -50,7 +48,6 @@ public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView
         super(context, attrs, defStyleAttr);
     }
 
-
     /**
      * 设置要打字的文字
      *
@@ -61,29 +58,17 @@ public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView
     }
 
     /**
-     * 设置需要打字的文字及打字间隔
-     *
-     * @param str  打字文字
-     * @param time 打字间隔(ms)
-     */
-    public void setPrintText(String str, int time) {
-        setPrintText(str, time, DEFAULT_INTERVAL_CHAR);
-    }
-
-    /**
      * 设置需要打字的文字,打字间隔,间隔符号
      *
      * @param str          打字文字
      * @param time         打字间隔(ms)
-     * @param intervalChar 间隔符号("_")
      */
-    public void setPrintText(String str, int time, String intervalChar) {
-        if (strIsEmpty(str) || 0 == time || strIsEmpty(intervalChar)) {
+    public void setPrintText(String str, int time) {
+        if (strIsEmpty(str) || 0 == time) {
             return;
         }
         this.mPrintStr = str;
         this.intervalTime = time;
-        this.intervalChar = intervalChar;
     }
 
     /**
@@ -121,7 +106,6 @@ public class PrinterTextView extends androidx.appcompat.widget.AppCompatTextView
 
     /**
      * 接收新文本并开始打字效果。
-     *
      * @param newText 新文本
      */
     public void receiveText(String newText) {
